@@ -23,3 +23,8 @@ npm run package
 open out/Timer-darwin-x64/Timer.app
 ```
 
+
+## Screenshot
+
+![alt text](doc/screenshot.png "Screenshot")
+
