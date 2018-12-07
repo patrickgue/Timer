@@ -1,10 +1,10 @@
 {
   "name": "weathered",
-  "productName": "Weathered",
+  "productName": "Timer",
   "version": "1.0.0",
   "main": "main.js",
   "license": "ISC",
-  "author": "Kevin Sawicki",
+  "author": "Patrick Günthard (based on code by Kevin Sawicki)",
   "scripts": {
     "start": "electron .",
     "package": "electron-packager ./ --platform=darwin --arch=x64 --out=out --icon=./icon.icns --overwrite"

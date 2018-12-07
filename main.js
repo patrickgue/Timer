@@ -20,7 +20,7 @@ app.on('window-all-closed', () => {
 })
 
 const createTray = () => {
-  tray = new Tray(path.join(assetsDirectory, 'sunTemplate.png'))
+  tray = new Tray(path.join(assetsDirectory, 'timer.png'))
   tray.on('right-click', toggleWindow)
   tray.on('double-click', toggleWindow)
   tray.on('click', function (event) {
@@ -49,7 +49,7 @@ const getWindowPosition = () => {
 const createWindow = () => {
   window = new BrowserWindow({
     width: 300,
-    height: 450,
+    height: 175,
     show: false,
     frame: false,
     fullscreenable: false,
@@ -85,40 +85,3 @@ const showWindow = () => {
   window.show()
   window.focus()
 }
-
-ipcMain.on('show-window', () => {
-  showWindow()
-})
-
-ipcMain.on('weather-updated', (event, weather) => {
-  // Show "feels like" temperature in tray
-  tray.setTitle(`${Math.round(weather.currently.apparentTemperature)}°`)
-
-  // Show summary and last refresh time as hover tooltip
-  const time = new Date(weather.currently.time).toLocaleTimeString()
-  tray.setToolTip(`${weather.currently.summary} at ${time}`)
-
-  // Update icon for different weather types
-  switch (weather.currently.icon) {
-    case 'cloudy':
-    case 'fog':
-    case 'partly-cloudy-day':
-    case 'partly-cloudy-night':
-      tray.setImage(path.join(assetsDirectory, 'cloudTemplate.png'))
-      break
-    case 'rain':
-    case 'sleet':
-    case 'snow':
-      tray.setImage(path.join(assetsDirectory, 'umbrellaTemplate.png'))
-      break
-    case 'clear-night':
-      tray.setImage(path.join(assetsDirectory, 'moonTemplate.png'))
-      break
-    case 'wind':
-      tray.setImage(path.join(assetsDirectory, 'flagTemplate.png'))
-      break
-    case 'clear-day':
-    default:
-      tray.setImage(path.join(assetsDirectory, 'sunTemplate.png'))
-  }
-})
