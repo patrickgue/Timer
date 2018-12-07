@@ -3,16 +3,14 @@
 An example app for building a native-looking Mac OS X tray app with a popover
 using [Electron](http://electron.atom.io).
 
-The app shows the weather for the current location and refreshes every 10
-minutes.
+The app implements a simple timer application
 
 Built with [photon](http://photonkit.com).
-Uses the [Dark Sky Forecast API](https://developer.forecast.io).
 
 ## Running
 
 ```sh
-git clone https://github.com/kevinsawicki/tray-example
+git clone https://github.com/patrickgue/Timer
 cd tray-example
 npm install
 npm start
@@ -22,7 +20,6 @@ npm start
 
 ```sh
 npm run package
-open out/Weathered-darwin-x64/Weathered.app
+open out/Timer-darwin-x64/Timer.app
 ```
 
-![screenshot](https://cloud.githubusercontent.com/assets/671378/15033544/97011f38-1220-11e6-9611-1571063fe107.png)
