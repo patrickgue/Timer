@@ -11,7 +11,7 @@ Built with [photon](http://photonkit.com).
 
 ```sh
 git clone https://github.com/patrickgue/Timer
-cd tray-example
+cd Timer
 npm install
 npm start
 ```
